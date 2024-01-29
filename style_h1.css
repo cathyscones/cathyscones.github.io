@@ -1,0 +1,15 @@
+body {
+   font-family: arial;
+}
+h1 {
+   text-align:center;
+}
+h2 {
+   text-align:center;
+}
+
+img {
+   float:left;
+   margin-right: 10px;
+   width:200px;height:180px;
+}
