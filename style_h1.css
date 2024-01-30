@@ -12,12 +12,11 @@ p {
 }
 div {
    display: block;
+   clear: left;
+}
+
 img {
    float:left;
    margin-right: 10px;
    width:200px;height:180px;
-}
-
-.clear-float {
-  clear: left;
 }
