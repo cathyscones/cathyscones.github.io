@@ -7,7 +7,8 @@ h1 {
 h2 {
    text-align:center;
 }
-
+div {
+   display: block;
 img {
    float:left;
    margin-right: 10px;
