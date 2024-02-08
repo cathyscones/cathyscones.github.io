@@ -6,10 +6,7 @@ h1 {
 }
 h2 {
    text-align:center;
-}
-
-div {
-   clear: left;
+   clear:both;
 }
 
 img {
