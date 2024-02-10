@@ -11,7 +11,7 @@
     $(document).ready(function(){
       $("button").on('click', function(){
         $("h1").css("color", "purple");
-        $("img").css("border", "solid 3px purple");
+        $("img").animate({borderWidth: "3px"});
         $("h1").animate({"font-size": "+=1rem"}, 2000);
         $("h1").animate({"font-size": "-=1rem"}, 2000);
         var timer = setTimeout(function() {$("h1").css("color", "black")}, 4000);
