@@ -81,6 +81,10 @@ body, h1, h2, h3, p, img, ul, li{
 		text-align:center;
 	}
 
+    img { 
+        max-width: 100%; 
+    }
+
 	.float-left{
 		float:left;	/* use this on an element (like an image) to make it float to the left of it's containing HTML element */
 		margin:0  10px 10px 0;
@@ -117,7 +121,12 @@ body, h1, h2, h3, p, img, ul, li{
         ul.navigation li{
             margin:0 0 5px;	/* this code adds a 5px to the bottom of the list elements */
         }
+
+       
+        
     }
+   
+
     @media screen and (min-width:901px) { /* for desktop/ laptop */
         div#header{
             background-image:url(headerbkgd.png); /* sets a background image in the header and the position it should sit */
