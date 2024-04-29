@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style_hw4.css">
+  <link rel="manifest" href="manifest.json">
+  <title>Progressive Web Applications</title>
+  <script>navigator.serviceWorker.register("service-worker.js")</script> 
+  </head>
+
+    <body> 
+
+        <h1>Progressive Web Applications</h1>
+    
+        <div id="colorOptions">
+            <label for="bgColorSelect">Select Background Color:</label>
+            <select id="bgColorSelect">
+                <option value="#ffffff">White</option>
+                <option value="lightblue.jpg">Blue</option>
+                <option value="lightgold.jpg">Gold</option>
+               <!-- Add more color options as needed -->
+            </select>
+        </div>
+    
+        <p> Progressive Web Applications(PWAs) offer a style of web development that works both in a computer browser as well as through download to the user's device. PWA technology allows users to access a website in a traditional manner via a browser but also allows the download of the application like a native app. </p>
+        <p> Progressive web applications have a number of advantages due to their versatility and user friendly nature. Once the PWA has been downloaded from the web browser, they allow the user to access the web application even when offline through the use of service workers. They also allow for faster loading using HTTP caching, improving overall app performance. PWAs allow users to experience the benefits of a native app without needing to download through a traditional app store.  </p>
+
+    
+        <script>
+           document.getElementById('bgColorSelect').addEventListener('change', function() {
+            var selectedColor = this.value;
+            document.body.style.backgroundImage = `url(${selectedColor})`;
+        });
+        </script>
+    </body>
+    </html>

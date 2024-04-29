@@ -1,0 +1,17 @@
+body {
+    font-family: arial;
+    background-color: #ffffff; /* default white background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Set minimum height to 100% of viewport height */
+    padding: 20px; 
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+p {
+    clear: both;
+}
