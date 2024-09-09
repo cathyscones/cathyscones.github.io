@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 2 Part 2: Basic Calculations</title>
+  <meta name="description" content = "Cathy Cohn homework 2 part 2">
+  <link rel="stylesheet" href="style_cis114.css">
+  </head>
+
+  <body>
+
+    
+   <div>
+    <h2>Homework 2 Part 2: Basic Calculations</h2>
+    <p>Enter three integers to find the sum, average, product, maximum, and minimum.</p>
+    <br>
+    <form id="myform" name="myform">
+
+        <table>
+        <tr>
+        
+        <td>First Number:</td> 
+        <td><input type="number" name="num1" autofocus></td>
+        </tr>
+        
+        <tr>
+        <td>Second Number:</td> 
+        <td><input type="number" name="num2"></td>
+        </tr>
+        
+        <tr>
+        <td>Third Number:</td> 
+        <td><input type="number" name="num3"></td>
+        </tr>
+
+        </table>
+        <input type="button" onclick="calculate()" value="Calculate Results">
+
+        <input type="reset" value="Clear Form"><br><br>
+        
+        Results: <textarea rows="6" cols="40" id="result" readonly></textarea><br><br>
+
+        <br>
+
+        </form>
+
+        <script>
+
+            function calculate() {
+         
+                // declare variables
+                 
+                  let number1, number2, number3, sum, product, max, min;
+         
+                  number1 = document.forms["myform"].elements["num1"].value;
+                  number2 = document.forms["myform"].elements["num2"].value;
+                  number3 = document.forms["myform"].elements["num3"].value;
+
+                  // try to convert numbers from strings to integers
+
+                  try {
+                        let n1 = parseInt(number1);
+                        let n2 = parseInt(number2);
+                        let n3 = parseInt(number3);
+
+                        // calculate variables
+                        sum = n1 + n2 + n3;
+                        product = n1 * n2 * n3;
+                        average = sum / 3;
+                        max = Math.max(n1, n2, n3);
+                        min = Math.min(n1, n2, n3);
+
+                        // write results to result text box
+                        document.getElementById("result").value = ("Sum: " + sum + 
+                            "\nProduct: " +  product + 
+                            "\nAverage: " + average +
+                            "\nHighest value: " + max + 
+                            "\nLowest value: " + min)
+                    } 
+                    // report error if not all values are integers
+                    catch(error){
+                       document.getElementById("result").value = ("Error: not all values are integers.")
+                    }
+                }
+         </script>
+        
+    <p> 
+    <button onclick="window.location.href='https://cathyscones.github.io/CIS114/hw2.html'">Back</button>
+    </p>   
+</div>
+         
+    </body>
+  </html>
+  
