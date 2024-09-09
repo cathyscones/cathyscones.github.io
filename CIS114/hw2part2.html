@@ -64,6 +64,12 @@
                         let n2 = parseInt(number2);
                         let n3 = parseInt(number3);
 
+                        // report error if any values are blank
+                         if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+                            document.getElementById("result").value = "Error: not all values are valid numbers.";
+                            return;  // Exit the function if invalid inputs are found
+                        }
+                        
                         // calculate variables
                         sum = n1 + n2 + n3;
                         product = n1 * n2 * n3;
@@ -85,10 +91,10 @@
                 }
          </script>
         
-    <p> 
-    <button onclick="window.location.href='https://cathyscones.github.io/CIS114/hw2.html'">Back</button>
-    </p>   
-</div>
+      <p> 
+      <button onclick="window.location.href='https://cathyscones.github.io/CIS114/hw2.html'">Back</button>
+      </p>   
+  </div>
          
     </body>
   </html>
