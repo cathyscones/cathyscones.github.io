@@ -61,7 +61,10 @@
 	.clear{
 		clear:both; /* this clears floats.  This would be used to cancel out a float's behavior on content below it.  */
 	}	
-   
+
+	.right-justified {
+    		text-align: right; /* Right-align the text */
+	}
     @media screen and (max-width:900px) { /* for mobile */
         div#header{
             padding:45px 10px 15px;	/* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
