@@ -62,54 +62,32 @@
                  
                   let qty1, qty2, qty3, qty4, gross1, gross2, gross3, gross4, total, earnings;
          
-                  homework = parseInt(document.forms["gradeform"].elements["hw"].value);
-                  midterm = parseInt(document.forms["gradeform"].elements["midterm"].value);
-                  final = parseInt(document.forms["gradeform"].elements["final"].value);
-                  participation = parseInt(document.forms["gradeform"].elements["participation"].value);
+                  qty1 = parseInt(document.forms["salesform"].elements["item1"].value);
+                  qty2 = parseInt(document.forms["salesform"].elements["item2"].value);
+                  qty3 = parseInt(document.forms["salesform"].elements["item3"].value);
+                  qty4 = parseInt(document.forms["salesform"].elements["item4"].value);
                 
                 // report error if any values are blank
-                  if (isNaN(homework) || isNaN(midterm) || isNaN(final) || isNaN(participation)) {
+                  if (isNaN(qty1) || isNaN(qty2) || isNaN(qty3) || isNaN(qty4)) {
                     document.getElementById("result").value = "Error: not all values are valid numbers.";
                     return;  // Exit the function if invalid inputs are found
                   }
 
-              // report error if any values are outside range
-              if (
-                homework < 0 || homework > 100 ||
-                midterm < 0 || midterm > 100 ||
-                final < 0 || final > 100 ||
-                participation < 0 || participation > 100) {
-                  document.getElementById("result").value = "Error: all values must be between 0 and 100.";
-                  return;  // Exit the function if values are out of range
-                }
-                
-              
-              grade =  Math.round((0.5*homework) + (0.2*midterm) + (0.2*final) + (0.1*participation));
+                const price1 = 20.99;
+                const price2 = 12.75;
+                const price3 = 9.95;
+                const price4 = 35.89;
+  
+                gross1 = price1*qty1;
+                gross2 = price2*qty2;
+                gross3 = price3*qty3;
+                gross4 = price4*qty4;
 
-              if (grade>=90) {
-                letter = "A";
-              } else if (grade>=80) {
-                letter = "B";
-              } else if (grade>=70) {
-                letter = "C";
-              } else if (grade>=60) {
-                letter = "D";
-              } else {
-                letter = "F";
-              }
-
-              // write results to result text box
-                   document.getElementById("result").value = "Grade: "+ grade + "\nLetter Grade: " +letter;
-
-              // if D or F, display retake message
-                if (letter == "D" || letter == "F") {
-                  document.getElementById("result").value += "\nStudent must retake the course";
-                }
             }
          </script>
         
       <p> 
-      <a href="/CIS114/hw3.html">Back</a>
+      <a href="CIS114/hw3.html">Back</a>
       </p>   
   </div>
          
