@@ -60,7 +60,7 @@
            <tr>
              <td>1</td>
              <td>$20.99</td>
-             <td><input type="text" id="qty1" value=""></td>
+             <td><input type="text" id="qty1" value="" readonly></td>
              <td><input type="text" id="gross1" value="" readonly></td>
            </tr>
 
@@ -128,6 +128,24 @@
                 gross2 = price2*qty2;
                 gross3 = price3*qty3;
                 gross4 = price4*qty4;
+
+              total = gross1+gross2+gross3+gross4;
+              earnings = 250 + (total*0.09);
+
+              //write results to the results table
+
+              document.getElementById("qty1").value = qty1;
+              document.getElementById("qty2").value = qty2;
+              document.getElementById("qty3").value = qty3;
+              document.getElementById("qty4").value = qty4;
+
+              document.getElementById("gross1").value = `$${gross1.toFixed(2)}`;
+              document.getElementById("gross2").value = `$${gross2.toFixed(2)}`;
+              document.getElementById("gross3").value = `$${gross3.toFixed(2)}`;
+              document.getElementById("gross4").value = `$${gross4.toFixed(2)}`;
+
+              document.getElementById("total").value = `$${total.toFixed(2)}`;
+              document.getElementById("total").value = `$${earnings.toFixed(2)}`;
 
             }
          </script>
