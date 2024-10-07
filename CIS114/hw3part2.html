@@ -46,7 +46,9 @@
         <input type="button" onclick="calculate()" value="Submit"><br>
 
         <input type="reset" value="Clear Form"><br><br>
-        
+ 
+      <div id="errorMessage" style="color: red; margin-bottom: 10px;"></div>
+
        <table>
          <thead>
            <tr>
@@ -103,7 +105,9 @@
         <script>
 
             function calculate() {
-         
+              // reset error message
+              document.getElementById("errorMessage").value = "";
+              
                 // declare variables
                  
                   let qty1, qty2, qty3, qty4, gross1, gross2, gross3, gross4, total, earnings;
@@ -115,9 +119,16 @@
                 
                 // report error if any values are blank
                   if (isNaN(qty1) || isNaN(qty2) || isNaN(qty3) || isNaN(qty4)) {
-                    document.getElementById("result").value = "Error: not all values are valid numbers.";
+                    document.getElementById("errorMessage").value = "Error: not all values are valid numbers.";
                     return;  // Exit the function if invalid inputs are found
                   }
+
+              // report error if any values are negative
+              if (
+                qty1 < 0 || qty2 < 0 || qty3 < 0 || qty4 < 0) {
+                  document.getElementById("errorMessage").value = "Error: values cannot be negative.";
+                  return;  // Exit the function if values are out of range
+                }
 
                 const price1 = 20.99;
                 const price2 = 12.75;
