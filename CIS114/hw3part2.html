@@ -60,29 +60,39 @@
            <tr>
              <td>1</td>
              <td>$20.99</td>
-             <td><input type="text" value=document.forms["salesform"].elements["item1"].value readonly></td>
+             <td><input type="text" value=""></td>
              <td><input type="text" value="" readonly></td>
            </tr>
 
           <tr>
              <td>2</td>
              <td>$12.75</td>
-             <td><input type="text" value=document.forms["salesform"].elements["item2"].value readonly></td>
+             <td><input type="text" value="" readonly></td>
              <td><input type="text" value="" readonly></td>
            </tr>
           <tr>
              <td>3</td>
              <td>$9.95</td>
-             <td><input type="text" value=document.forms["salesform"].elements["item3"].value readonly></td>
+             <td><input type="text" value="" readonly></td>
              <td><input type="text" value="" readonly></td>
            </tr>
           
           <tr>
              <td>4</td>
              <td>$35.89</td>
-             <td><input type="text" value=document.forms["salesform"].elements["item4"].value readonly></td>
-             <td><input type="text" value="" readonly></td>
+             <td><input type="text" id="qty4" value="" readonly></td>
+             <td><input type="text" id="gross4" value="" readonly></td>
            </tr>
+
+          <tr>
+            <td colspan="3"><label for="total">Total Amount Sold</label></td>
+            <td>id="total" name="total" value="" readonly</td>
+          </tr>
+
+           <tr>
+            <td colspan="3"><label for="earnings">Total Weekly Earnings</label></td>
+            <td>id="earnings" name="earnings" value="" readonly</td>
+          </tr>
           
         </tbody>
        </table>
