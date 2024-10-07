@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 3 Part 2: Sales Commission Calculator</title>
+  <meta name="description" content = "Cathy Cohn homework 3 part 2">
+  <link rel="stylesheet" href="style_cis114.css">
+  </head>
+
+  <body>
+
+    
+   <div>
+    <h2>Sales Commission Calculator</h2>
+    <p>Use this calculator to determine a salesperson's weekly pay based on $250 flat rate per week plus 9% of gross sales.</p>
+    <br>
+    <form id="salesform" name="salesform">
+
+      <label for="name">Seller's Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <p>For each item type the quantity sold by the seller</p>
+        <table>
+        <tr>
+        <td><label for="item1">Item 1:</label></td> 
+        <td><input type="number" id="item1" name="item1"></td>
+        </tr>
+        
+        <tr>
+        <td><label for="item2">Item 2:</label></td> 
+         <td><input type="number" id="item2" name="item2"></td>
+        </tr>
+        
+        <tr>
+         <td><label for="item3">Item 3:</label></td> 
+        <td><input type="number" id="item3" name="item3"></td>
+        </tr>
+
+        <tr>
+          <td><label for="item4">Item 4:</label></td> 
+        <td><input type="number" id="item4" name="item4"></td>
+        </tr>
+
+
+        </table>
+        <input type="button" onclick="calculate()" value="Submit"><br>
+
+        <input type="reset" value="Clear Form"><br><br>
+        
+        <label for="result">Results:</label> 
+        <textarea rows="6" cols="40" id="result" readonly></textarea><br><br>
+
+        <br>
+
+        </form>
+
+        <script>
+
+            function calculate() {
+         
+                // declare variables
+                 
+                  let qty1, qty2, qty3, qty4, gross1, gross2, gross3, gross4, total, earnings;
+         
+                  homework = parseInt(document.forms["gradeform"].elements["hw"].value);
+                  midterm = parseInt(document.forms["gradeform"].elements["midterm"].value);
+                  final = parseInt(document.forms["gradeform"].elements["final"].value);
+                  participation = parseInt(document.forms["gradeform"].elements["participation"].value);
+                
+                // report error if any values are blank
+                  if (isNaN(homework) || isNaN(midterm) || isNaN(final) || isNaN(participation)) {
+                    document.getElementById("result").value = "Error: not all values are valid numbers.";
+                    return;  // Exit the function if invalid inputs are found
+                  }
+
+              // report error if any values are outside range
+              if (
+                homework < 0 || homework > 100 ||
+                midterm < 0 || midterm > 100 ||
+                final < 0 || final > 100 ||
+                participation < 0 || participation > 100) {
+                  document.getElementById("result").value = "Error: all values must be between 0 and 100.";
+                  return;  // Exit the function if values are out of range
+                }
+                
+              
+              grade =  Math.round((0.5*homework) + (0.2*midterm) + (0.2*final) + (0.1*participation));
+
+              if (grade>=90) {
+                letter = "A";
+              } else if (grade>=80) {
+                letter = "B";
+              } else if (grade>=70) {
+                letter = "C";
+              } else if (grade>=60) {
+                letter = "D";
+              } else {
+                letter = "F";
+              }
+
+              // write results to result text box
+                   document.getElementById("result").value = "Grade: "+ grade + "\nLetter Grade: " +letter;
+
+              // if D or F, display retake message
+                if (letter == "D" || letter == "F") {
+                  document.getElementById("result").value += "\nStudent must retake the course";
+                }
+            }
+         </script>
+        
+      <p> 
+      <a href="/CIS114/hw3.html">Back</a>
+      </p>   
+  </div>
+         
+    </body>
+  </html>
+  
