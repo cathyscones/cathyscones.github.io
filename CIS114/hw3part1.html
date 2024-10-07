@@ -62,7 +62,7 @@
          
                   homework = parseInt(document.forms["gradeform"].elements["hw"].value);
                   midterm = parseInt(document.forms["gradeform"].elements["midterm"].value);
-                  final = ParseInt(document.forms["gradeform"].elements["final"].value);
+                  final = parseInt(document.forms["gradeform"].elements["final"].value);
                   participation = parseInt(document.forms["gradeform"].elements["participation"].value);
                 
                 // report error if any values are blank
@@ -94,16 +94,16 @@
                 letter = "D";
               } else {
                 letter = "F";
+              }
 
               // write results to result text box
-                   document.getElementById("result").value = "Grade: ${grade}\nLetter Grade: ${letter}";
+                   document.getElementById("result").value = "Grade: "+ grade + "\nLetter Grade: " +letter";
 
               // if D or F, display retake message
                 if (letter == "D" || letter == "F") {
-                  document.getElementById("result").value = "Student must retake the course";
-
-                    } 
+                  document.getElementById("result").value += "\nStudent must retake the course";
                 }
+            }
          </script>
         
       <p> 
