@@ -65,6 +65,10 @@
 	.right-justified {
     		text-align: right; /* Right-align the text */
 	}
+
+	table input[type="text"] {
+   	 text-align: right; /* Right-align all text inputs in the table */
+	}
     @media screen and (max-width:900px) { /* for mobile */
         div#header{
             padding:45px 10px 15px;	/* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
