@@ -62,38 +62,38 @@
            <tr>
              <td>1</td>
              <td>$20.99</td>
-             <td><input type="text" id="qty1" class="right-justified" value="" readonly></td>
-             <td><input type="text" id="gross1" class="right-justified" value="" readonly></td>
+             <td><input type="text" id="qty1" value="" readonly style="text-align: right;"></td>
+             <td><input type="text" id="gross1" value="" readonly style="text-align: right;"></td>
            </tr>
 
           <tr>
              <td>2</td>
              <td>$12.75</td>
-             <td><input type="text" id="qty2" class="right-justified" value="" readonly></td>
-             <td><input type="text" id="gross2" class="right-justified" value="" readonly></td>
+             <td><input type="text" id="qty2" value="" readonly style="text-align: right;"></td>
+             <td><input type="text" id="gross2" value="" readonly style="text-align: right;"></td>
            </tr>
           <tr>
              <td>3</td>
              <td>$9.95</td>
-             <td><input type="text" id="qty3" class="right-justified" value="" readonly></td>
-             <td><input type="text" id="gross3" class="right-justified" value="" readonly></td>
+             <td><input type="text" id="qty3" value="" readonly style="text-align: right;"></td>
+             <td><input type="text" id="gross3" value="" readonly style="text-align: right;"></td>
            </tr>
           
           <tr>
              <td>4</td>
              <td>$35.89</td>
-             <td><input type="text" id="qty4" class="right-justified" value="" readonly></td>
-             <td><input type="text" id="gross4" class="right-justified" value="" readonly></td>
+             <td><input type="text" id="qty4" value="" readonly style="text-align: right;"></td>
+             <td><input type="text" id="gross4" value="" readonly style="text-align: right;"></td>
            </tr>
 
           <tr>
             <td colspan="3"><label for="total">Total Amount Sold</label></td>
-            <td><input type="text" id="total" name="total" class="right-justified" value="" readonly style="text-align: right;"></td>
+            <td><input type="text" id="total" name="total" value="" readonly style="text-align: right;"></td>
           </tr>
 
            <tr>
             <td colspan="3"><label for="earnings">Total Weekly Earnings</label></td>
-            <td><input type="text" id="earnings" name="earnings" class="right-justified" value="" readonly style="text-align: right;"></td>
+            <td><input type="text" id="earnings" name="earnings" value="" readonly style="text-align: right;"></td>
           </tr>
           
         </tbody>
@@ -106,7 +106,7 @@
 
             function calculate() {
               // reset error message
-              document.getElementById("errorMessage").value = "";
+              document.getElementById("errorMessage").innerText = "";
               
                 // declare variables
                  
@@ -119,14 +119,14 @@
                 
                 // report error if any values are blank
                   if (isNaN(qty1) || isNaN(qty2) || isNaN(qty3) || isNaN(qty4)) {
-                    document.getElementById("errorMessage").value = "Error: not all values are valid numbers.";
+                    document.getElementById("errorMessage").innerText = "Error: not all values are valid numbers.";
                     return;  // Exit the function if invalid inputs are found
                   }
 
               // report error if any values are negative
               if (
                 qty1 < 0 || qty2 < 0 || qty3 < 0 || qty4 < 0) {
-                  document.getElementById("errorMessage").value = "Error: values cannot be negative.";
+                  document.getElementById("errorMessage").innerText = "Error: values cannot be negative.";
                   return;  // Exit the function if values are out of range
                 }
 
