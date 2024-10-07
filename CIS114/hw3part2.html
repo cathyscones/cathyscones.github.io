@@ -45,7 +45,7 @@
         </table>
         <input type="button" onclick="calculate()" value="Submit"><br>
 
-        <input type="reset" value="Clear Form"><br><br>
+        <input type="button" value="Clear Form" onclick="clearForm()"><br><br>
  
       <div id="errorMessage" style="color: red; margin-bottom: 10px;"></div>
 
@@ -159,6 +159,14 @@
               document.getElementById("earnings").value = `$${earnings.toFixed(2)}`;
 
             }
+
+          function clearForm() {
+            // Clear all input fields in the form
+            document.getElementById("salesform").reset();
+    
+            // Clear the error message
+            document.getElementById("errorMessage").innerText = "";
+          }
          </script>
         
       <p> 
