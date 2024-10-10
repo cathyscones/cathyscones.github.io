@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 4 Part 1: Arithemtic</title>
+  <meta name="description" content = "Cathy Cohn homework 4 part 1">
+  <link rel="stylesheet" href="style_cis114.css">
+  </head>
+
+  <body>
+
+    
+   <div>
+    <h2>Looping Statements for Arithmetic Calculations</h2>
+    <p>In this section, I will demonstrate some basic arithmetic calculations performed using JavaScript loops.</p>
+    <br>
+<!--  it will contain a script, using the for statement, that calculates the product and sum of every fourth integer from 5 to 25 inclusive and then displays the results, along with some accompanying text.
+
+For example, when presenting the results, you could show two lines such as:
+The result of 5 * 9 * 13 * 17 * 21 * 25 is ....
+The result of 5 + 9 + 13 + 17 + 21 + 25 is .... 
+
+On that same web page for Part 1, you will have another script, now using the while or do while statement, that calculates the product and sum of every third integer from 3 to 18 inclusive and then displays the results, along with some accompanying text.
+
+For example, when presenting the results, you could show two lines such as:
+The result of 3 * 6 * 9 * 12 * 15 * 18 is ....
+The result of 3 + 6 + 9 + 12 + 15 + 18 is ....
+
+You should use toLocaleString() to present the result with the correct punctuation - remember that it is really bad for users to read a big number such as 1342658 instead of reading as 1,342,658 that shows the separation of the thousands.
+
+-->
+        <script>
+
+            function getGrade() {
+         
+                // declare variables
+                 
+                  let homework, midterm, final, participation, grade, letter;
+         
+                  homework = parseInt(document.forms["gradeform"].elements["hw"].value);
+                  midterm = parseInt(document.forms["gradeform"].elements["midterm"].value);
+                  final = parseInt(document.forms["gradeform"].elements["final"].value);
+                  participation = parseInt(document.forms["gradeform"].elements["participation"].value);
+                
+                // report error if any values are blank
+                  if (isNaN(homework) || isNaN(midterm) || isNaN(final) || isNaN(participation)) {
+                    document.getElementById("result").value = "Error: not all values are valid numbers.";
+                    return;  // Exit the function if invalid inputs are found
+                  }
+
+              // report error if any values are outside range
+              if (
+                homework < 0 || homework > 100 ||
+                midterm < 0 || midterm > 100 ||
+                final < 0 || final > 100 ||
+                participation < 0 || participation > 100) {
+                  document.getElementById("result").value = "Error: all values must be between 0 and 100.";
+                  return;  // Exit the function if values are out of range
+                }
+                
+              
+              grade =  Math.round((0.5*homework) + (0.2*midterm) + (0.2*final) + (0.1*participation));
+
+              if (grade>=90) {
+                letter = "A";
+              } else if (grade>=80) {
+                letter = "B";
+              } else if (grade>=70) {
+                letter = "C";
+              } else if (grade>=60) {
+                letter = "D";
+              } else {
+                letter = "F";
+              }
+
+              // write results to result text box
+                   document.getElementById("result").value = "Grade: "+ grade + "\nLetter Grade: " +letter;
+
+              // if D or F, display retake message
+                if (letter == "D" || letter == "F") {
+                  document.getElementById("result").value += "\nStudent must retake the course";
+                }
+            }
+         </script>
+        
+      <p> 
+      <a href="hw4.html">Back</a>
+      </p>   
+  </div>
+         
+    </body>
+  </html>
+  
