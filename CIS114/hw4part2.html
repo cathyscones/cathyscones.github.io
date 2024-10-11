@@ -14,7 +14,7 @@
    <div>
     <h2>Learn about compound interest!</h2>
     <br>
-  
+  <p>If you invest $1000, your money will grow exponentially over time. See how much money you will have at a variety of interest rates.</p>
      <!--  Below the heading you will code a script to show 3 tables with the calculation of compound interest on a principal of $1000.
 
 The first table will be for the interest rate of 5%
@@ -24,6 +24,24 @@ Each of the tables will show the rows from year 1 through 5.-->
 
      <script>
       let principal, interest, years, amount;
+
+       for (interest=0.05; interest<=0.07;interest++) {
+         <thead>
+           <tr>
+             <th>Year/th>
+             <th>Amount on Deposit</th>
+             <th>Interest Rate</th>
+           </tr>
+           </thead>
+         for (years=1;years<=5;years++) {
+           amount = principal(1+interest)**years;
+           <tr>
+             <td>years</td>
+             <td>amount</td>
+             <td><interest rate></td>
+           </tr>
+         }
+       }
      </script>
 <br>
    
