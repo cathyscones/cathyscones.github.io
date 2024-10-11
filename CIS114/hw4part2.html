@@ -25,15 +25,15 @@
 
        for (interest=0.05; interest<=0.07;interest=interest+0.01) {
          output+= "<table>";
-         output += "
+         output += `
          <thead>
            <tr>
-             <th>Year/th>
+             <th>Year</th>
              <th>Amount on Deposit</th>
              <th>Interest Rate</th>
            </tr>
            </thead>
-           <tbody>"
+           <tbody>`
          for (years=1;years<=5;years++) {
            amount = principal * Math.pow(1 + interest, years);
            output+=`
