@@ -15,17 +15,17 @@
     <h2>Learn about compound interest!</h2>
     <br>
   <p>If you invest $1000, your money will grow exponentially over time. See how much money you will have at a variety of interest rates.</p>
-     <!--  Below the heading you will code a script to show 3 tables with the calculation of compound interest on a principal of $1000.
 
-The first table will be for the interest rate of 5%
-The second table will be for the interest rate of 6%
-The third table will be for the interest rate of 7%
-Each of the tables will show the rows from year 1 through 5.-->
+     <div id="tables"></div>
 
      <script>
-      let principal, interest, years, amount;
+      let principal=1000;
+       let interest, years, amount;
+       let output="";
 
        for (interest=0.05; interest<=0.07;interest=interest+0.01) {
+         output+= "<table>";
+         output += "
          <thead>
            <tr>
              <th>Year/th>
@@ -33,15 +33,20 @@ Each of the tables will show the rows from year 1 through 5.-->
              <th>Interest Rate</th>
            </tr>
            </thead>
+           <tbody>"
          for (years=1;years<=5;years++) {
-           amount = principal(1+interest)**years;
+           amount = principal * Math.pow(1 + interest, years);
+           output+=`
            <tr>
-             <td>years</td>
-             <td>amount</td>
-             <td><interest rate></td>
-           </tr>
+             <td>${years}</td>
+             <td>${amount.toFixed(2)}</td>
+             <td><${interest}></td>
+           </tr>`
          }
+         output += `</tbody></table><br/>`;
        }
+    document.getElementById('tables').innerHTML = output; // Insert the generated HTML into the div
+
      </script>
 <br>
    
