@@ -24,7 +24,7 @@
        let output="";
 
        for (interest=0.05; interest<=0.07;interest=interest+0.01) {
-         output+= "<table>";
+         output+= `<table border='1'>`;
          output += `
          <thead>
            <tr>
@@ -39,8 +39,8 @@
            output+=`
            <tr>
              <td>${years}</td>
-             <td>${amount.toFixed(2)}</td>
-             <td><${interest}></td>
+             <td>$${amount.toFixed(2)}</td>
+             <td><${interest.toFixed(2)}></td>
            </tr>`
          }
          output += `</tbody></table><br/>`;
