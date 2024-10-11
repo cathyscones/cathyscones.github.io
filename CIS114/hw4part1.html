@@ -17,6 +17,9 @@
     <br>
   
      <p>In this example, we'll use a for loop to calculate the product and sum of every 4th integer from 5 to 25.</p>
+     
+      <!-- Output area for the first script -->
+      <div id="result1"></div>
 
      <!--  script using the for statement that calculates the product and sum of every fourth integer from 5 to 25 inclusive.-->
     <script>
@@ -30,13 +33,16 @@
          }
           product = product.toLocaleString();
           sum = sum.toLocaleString();
-         
-         document.write(`<p>The result of 5 * 9 * 13 * 17 * 21 * 25 is ${product}.</p>`);
-         document.write(`<p>The result of 5 + 9 + 13 + 17 + 21 + 25 is ${sum}.</p>`);
+
+        document.getElementById('result1').innerHTML = `
+              <p>The result of 5 * 9 * 13 * 17 * 21 * 25 is ${product}.</p>
+              <p>The result of 5 + 9 + 13 + 17 + 21 + 25 is ${sum}.</p>
+          `;
      </script>
 <br>
      <p>In this example, we'll use a while loop to calculate the product and sum of every 3rd integer from 3 to 18.</p>
-     
+     <div id="result2"></div>
+
     <!--  script using a while loop that calculates the product and sum of every third integer from 3 to 18 inclusive.-->
     <script>
         let product2, sum2, x2;
@@ -52,8 +58,10 @@
           product2 = product2.toLocaleString();
           sum2 = sum2.toLocaleString();
          
-         document.write(`<p>The result of 3 * 6 * 9 * 12 * 15 * 18 is ${product2}.</p>`);
-         document.write(`<p>The result of 3 + 6 + 9 + 12 + 15 + 18 is ${sum2}.</p>`);
+        document.getElementById('result2').innerHTML = `
+              <p>The result of 3 * 6 * 9 * 12 * 15 * 18 is ${product2}.</p>
+              <p>The result of 3 + 6 + 9 + 12 + 15 + 18 is ${sum2}.</p>`;
+   
      </script>
             
       <p> <a href="hw4.html">Back</a> </p>   
