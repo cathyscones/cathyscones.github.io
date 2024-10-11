@@ -24,7 +24,7 @@
         product = 1;
         sum = 0;	
     
-        for (x=5; x<=25; x+=4) {
+        for (let x=5; x<=25; x+=4) {
           product *= x;
           sum += x;	
          }
@@ -39,21 +39,21 @@
      
     <!--  script using a while loop that calculates the product and sum of every third integer from 3 to 18 inclusive.-->
     <script>
-        let product2, sum2, x;
+        let product, sum, x;
         product = 1;
         sum = 0;
         x = 3;
     
         while (x<=18) {
-          product2 *= x;
-          sum2 += x;	
+          product *= x;
+          sum += x;	
           x = x+3;
          }
-          product2 = product2.toLocaleString();
-          sum2 = sum2.toLocaleString();
+          product = product.toLocaleString();
+          sum = sum.toLocaleString();
          
-         document.write(`<p>The result of 3 * 6 * 9 * 12 * 15 * 18 is ${produc2t}.</p>`);
-         document.write(`<p>The result of 3 + 6 + 9 + 12 + 15 + 18 is ${sum2}.</p>`);
+         document.write(`<p>The result of 3 * 6 * 9 * 12 * 15 * 18 is ${product}.</p>`);
+         document.write(`<p>The result of 3 + 6 + 9 + 12 + 15 + 18 is ${sum}.</p>`);
      </script>
             
       <p> <a href="hw4.html">Back</a> </p>   
