@@ -1,6 +1,6 @@
 :root {
     --background-color: #eafbef; /* Light green */
-    --header-color: #3b8a3b; /* Dark green */
+    --header-color: #228B22; /* Dark green */
     --light-row-color: #d0e7d0; /* Light green (just a shade darker than background) */
     --medium-row-color: #a1c6a1; /* Medium green */
 }
@@ -28,7 +28,6 @@ div#header{
             }
 
 table {
-    width: 100%;
     border-collapse: collapse; /* Removes gaps between table cells */
 }
 
