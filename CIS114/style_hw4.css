@@ -1,0 +1,52 @@
+:root {
+    --background-color: #eafbef; /* Light green */
+    --header-color: #3b8a3b; /* Dark green */
+    --light-row-color: #d0e7d0; /* Light green (just a shade darker than background) */
+    --medium-row-color: #a1c6a1; /* Medium green */
+}
+
+	body, h1, h2, h3, p, img, ul, li{
+		border:0; margin:8px; padding:10;
+	}
+		/*the above is a very basic reset rule.  Every browser has a slightly different default for HTML tags.  By using this simple CSS reset, all the more glaring styles 
+		are reset and can now be set to whatever properties that would suit your website best. */
+	
+	body{
+		background-color: var(--background-color);	/* a light green background color. */
+		font-family:Arial, Helvetica, sans-serif; /* the font family for all text on the web page is now either arial, helvetica or a sans-serif font if those two are not available */
+	}
+		
+	p{
+		letter-spacing:.04rem; /* letter spacing sets the horizontal spacing (kerning) between letters in a block of text. */
+		line-height:21px; /* line height sets the vertical spacing between lines of text. */
+	}
+		
+div#header{
+    background-color:#333; /* a more specific way to set a background color */
+    color:#55d3f9;	/* sets the the color of all header text to blue */
+    margin:0 auto; /* by declaring a width on any block element (like a div), giving it a css property of margin:0 auto will center that block element on page */
+            }
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes gaps between table cells */
+}
+
+thead {
+    background-color: var(--header-color);
+    color: white; /* Header text color */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--light-row-color); /* Light row color for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--medium-row-color); /* Medium row color for even rows */
+}
+
+th, td {
+    padding: 10px; /* Add some padding for better readability */
+    text-align: left;
+    border: 1px solid #ccc; /* Add border to table cells */
+}
