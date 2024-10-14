@@ -26,6 +26,7 @@
        for (interest=0.05; interest<=0.07;interest=interest+0.01) {
          output+= `<table border='1'>`;
          output += `
+         <caption>Table showing compound interest over 5 years at interest rate ${(interest * 100).toFixed(0)}%</caption>
          <thead>
            <tr>
              <th>Year</th>
