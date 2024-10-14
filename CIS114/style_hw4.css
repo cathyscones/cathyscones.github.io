@@ -36,6 +36,12 @@ thead {
     color: white; /* Header text color */
 }
 
+caption {
+    text-align: left;     /* Left justify the caption */
+    color: #555555;       /* Dark grey color */
+    font-style: italic;   /* Optional: makes the caption italic */
+  }
+
 tbody tr:nth-child(odd) {
     background-color: var(--light-row-color); /* Light row color for odd rows */
 }
