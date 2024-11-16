@@ -47,14 +47,14 @@ function validate()
     }    
 
     var checkboxes = document.getElementsByName("browsers");
-    let isChecked = false;
+    let selected = false;
     for (const checkbox of checkboxes) {
         if (checkbox.checked) {
-            isChecked = true;
+            selected = true;
             break;
         }
     }
-    if (!isChecked) {
+    if (!selected) {
         document.getElementById("msg3").innerHTML = msg3;
         x = 1;
     } else {
@@ -92,7 +92,7 @@ document.getElementById("msg5").innerHTML = " ";
 
     
    <div>
-    <h2>Validated Form Using Arrays</h2>
+    <h2>Validating Form Input</h2>
 <br>
     <form id="myform" name="myform">
 <table>
@@ -149,8 +149,8 @@ document.getElementById("msg5").innerHTML = " ";
     </tr>
   
 <tr>
- <td><input type="button"  onclick="validate();" value="Submit">
- <td><input type="reset" value="Reset" onclick="window.location.reload();">
+ <td><input type="button"  onclick="validate();" value="Submit"></td>
+ <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
   <td></td>
 </tr>
 <tr>
