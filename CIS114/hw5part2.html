@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 5 Part 2: Event Handlers</title>
+  <meta name="description" content = "Cathy Cohn homework 5 part 2">
+  <link rel="stylesheet" href="style_cis114.css">
+
+  </head>
+
+  <body>
+
+    
+   <div>
+    <h2>Event Handlers</h2>
+<br>
+    <form id="myform" name="myform">
+<table>
+   <!-- Text for name-->
+  <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name"></td>
+      <td><div id="msg"></div></td>
+    </tr>
+ <!-- Radio buttons for age-->
+  <tr>
+      <td>Age:</td>
+      <td>
+        <input type="radio" name="age" id="<20" value="<20">
+        <label for="<20">1</label>
+        <input type="radio" name="age" id="21-50" value="21-50">
+        <label for="21-50">2</label>
+        <input type="radio" name="age" id=">50" value=">50">
+        <label for=">50">3</label>
+      </td>
+      <td><div id="msg2"></div></td>
+
+    </tr>
+     <!-- Checkboxes for browsers-->
+    <tr>
+      <td>Which browsers have you used?</td>
+      <td>
+        <input type="checkbox" name="browsers" id="firefox" value="firefox">
+        <label for="firefox">Firefox</label>
+        <input type="checkbox" name="browsers" id="edge" value="edge">
+        <label for="edge">Edge</label>
+        <input type="checkbox" name="browsers" id="chrome" value="chrome">
+        <label for="chrome">Chrome</label>
+        <input type="checkbox" name="browsers" id="safari" value="safari">
+        <label for="safari">Safari</label>
+      </td>
+        <td><div id="msg3"></div></td>
+    </tr>
+
+    <!-- Dropdown for movies -->
+    <tr>
+      <td><label for="movies">Favorite Movie Genre:</label></td>
+      <td>
+        <select name="movies" id="movies">
+          <option value="">Select</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="documentary">Documentary</option>
+          <option value="scifi">Science Fiction</option>
+        </select>
+      </td>
+        <td><div id="msg4"></div></td>
+    </tr>
+  
+<tr>
+ <td><input type="button"  onclick="valButton();" value="Submit">
+ <td><input type="reset" value="Reset" onclick="window.location.reload();">
+  <td></td>
+</tr>
+<tr>
+ <td colspan="3"><div id="msg5"></div></td>
+</tr>
+</table>
+</form>
+
+            
+      <p> <a href="hw5.html">Back</a> </p>   
+    </div>
+         
+    </body>
+  </html>
+  
