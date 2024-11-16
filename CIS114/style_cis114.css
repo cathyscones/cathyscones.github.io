@@ -13,6 +13,11 @@
 		letter-spacing:.04rem; /* letter spacing sets the horizontal spacing (kerning) between letters in a block of text. */
 		line-height:21px; /* line height sets the vertical spacing between lines of text. */
 	}
+
+	.validation {
+	    color: green;
+	    font-style: italic;
+	  }
 		
     div#header{
         background-color:#333; /* a more specific way to set a background color */
