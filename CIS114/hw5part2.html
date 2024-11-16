@@ -20,11 +20,11 @@
         id="change" 
         onChange="goToNewPage(this.form);"
         aria-live="polite"
-        aria-label="Select a favorite search site to navigate to">>
+        aria-label="Select a favorite search site ">
           <option value="" disabled selected>Choose Destination:</option>
-          <option value="https://www.yahoo.com/" target="_blank">Yahoo</option>
-          <option value="https://www.google.com/" target="_blank">Google</option>
-          <option value="https://www.bing.com/" target="_blank">Bing</option>
+          <option value="https://www.yahoo.com/">Yahoo</option>
+          <option value="https://www.google.com/">Google</option>
+          <option value="https://www.bing.com/">Bing</option>
         </select>
     </form>
 
@@ -32,18 +32,33 @@
 
 <form>
 <h3>Choose your destination (using onClick event handler)</h3>
-<label for="click">Favorite site: </label><select name="destinationList" id="click">
-<option value="https://www.wikipedia.com/">Wikipedia</option>
-<option value="https://www.w3.org/">W3C</option>
-<option value="https://www.mozilla.org/">Mozilla</option>
-</select>
+<label for="click">Favorite site: </label>
+  <select 
+      name="destinationList" 
+      id="click"
+      aria-live="polite"
+      aria-label="Select a favorite search site ">
+        <option value="https://www.wikipedia.com/">Wikipedia</option>
+        <option value="https://www.w3.org/">W3C</option>
+        <option value="https://www.mozilla.org/">Mozilla</option>
+    </select>
 <input type="button" value="Go" onClick="goToNewPage(this.form);">
 </form>
 
             
       <p> <a href="hw5.html">Back</a> </p>   
-    </div>
-         
+  </div>
+  <script>
+    function goToNewPage(form) {
+      const selectElement = form.destinationList;
+      const selectedURL = selectElement.value;
+
+      if (selectedURL) {
+        // Open the URL in a new tab
+        window.open(selectedURL, '_blank');
+      }
+    }
+  </script>
     </body>
   </html>
   
