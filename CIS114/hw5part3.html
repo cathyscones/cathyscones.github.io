@@ -51,8 +51,11 @@ document.getElementById("msg5").innerHTML = " ";
     
    <div>
     <h2>State Census Data</h2>
+
 <br>
-    <form id="myform" name="myform">
+<p> Enter a state name or abbreviation to see 2019 census data.</p>
+
+<form id="myform" name="myform">
 <table>
    <!-- Text for State input -->
   <tr>
@@ -62,12 +65,11 @@ document.getElementById("msg5").innerHTML = " ";
    <!-- button to submit input & for output -->
 
   <tr>
- <td><input type="button"  onclick="validate();" value="Submit"></td>
+ <td><input type="button"  onclick="validate();" value="Get State Info"></td>
  <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
-  <td></td>
 </tr>
-<tr>
- <td colspan="3"><div id="msg5" class="validation"></div></td>
+<tr>a
+ <td colspan="2"><div id="msg" class="validation"></div></td>
 </tr>
 </table>
 </form>
