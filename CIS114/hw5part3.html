@@ -48,16 +48,10 @@ function process()
              <strong>Capital:</strong> ${selected[2]}<br>
              <strong>Population:</strong> ${selected[3].toLocaleString()}
            `;
-    document.getElementById("msg").innerHTML = info;
 	    document.getElementById("msg").innerHTML = info;
 	  }
   }
 
-
-function res()
-{
-document.getElementById("msg").innerHTML = "";
-}
 </script>
 
   </head>
@@ -78,8 +72,8 @@ document.getElementById("msg").innerHTML = "";
       <td><label for="state">State:</label></td>
       <td><input type="text" name="state" id="state"></td>
   </tr>  
+	
    <!-- button to submit input & for output -->
-
   <tr>
  <td><input type="button"  onclick="process();" value="Get State Info"></td>
  <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
