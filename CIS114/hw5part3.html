@@ -17,22 +17,26 @@ function validate()
 	       	["AR", "Arkansas", "Little Rock", 3017825],
 		["CA", "California", "Sacramento", 39512223],
 		["CO", "Colorado", "Denver", 5758736]];
-     var msg = "Sorry, we do not have information about this state! We only have information about";
-     var x=0;   // use x for determining if form fields valid 
-	
+     var error = "Sorry, we do not have information about this state! We only have information about";
+     var info = "Info about selected state: placeholder";
+     var selected = null;	
   	
      var input = document.getElementById("state").value.toLowerCase();
-        
-  	if (state == "" || name == null)
-  	{          	
-            document.getElementById("msg").innerHTML = msg;
-            x=1;
-    }  
-    else {
-        document.getElementById("msg").innerHTML = "";
-    }        
 
-  }
+	for (state in data) {
+  		if (state[0].toLowerCase() == input || state[1].toLowerCase() == input) {          	
+			selected = state;
+			document.getElementById("msg").innerHTML = "";
+			break;
+		    }          
+  	}
+
+	  if (select == null) {
+	     document.getElementById("msg").innerHTML = error;
+	  } else {
+	    document.getElementById("msg").innerHTML = info;
+	  }
+
 
 function res()
 {
