@@ -11,18 +11,19 @@
 
 function validate()
   {	
-     var msg = "Enter a name";
-     var msg2 = "Select one age range";
-     var msg3 = "Select at least one browser";
-     var msg4 = "Select a movie genre";
-     var validMsg = "All form fields are valid";
+    const data = [["AL", "Alabama", "Montgomery", 4903285],
+	       	["AK", "Alaska", "Juneau", 731545],
+	       	["AZ", "Arizona", "Phoenix", 7278717],
+	       	["AR", "Arkansas", "Little Rock", 3017825],
+		["CA", "California", "Sacramento", 39512223],
+		["CO", "Colorado", "Denver", 5758736]];
+     var msg = "Sorry, we do not have information about this state! We only have information about";
      var x=0;   // use x for determining if form fields valid 
 	
-     // check for any space characters that may be input
   	
-     var name = document.getElementById("name").value;
+     var input = document.getElementById("state").value.toLowerCase();
         
-  	if (name == "" || name == null)
+  	if (state == "" || name == null)
   	{          	
             document.getElementById("msg").innerHTML = msg;
             x=1;
@@ -36,11 +37,6 @@ function validate()
 function res()
 {
 document.getElementById("msg").innerHTML = " ";
-document.getElementById("msg2").innerHTML = " ";
-document.getElementById("msg3").innerHTML = " ";
-document.getElementById("msg4").innerHTML = " ";
-document.getElementById("msg5").innerHTML = " ";
-
 }
 </script>
 
