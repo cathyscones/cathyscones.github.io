@@ -13,19 +13,19 @@
     <h2>Event Handlers</h2>
     <div>
     <form id="myform" name="myform">
-    <h3>Choose your destination (using onChange event handler)</h3>
+    <h3>Get Ready for Black Friday shopping! (using onChange event handler)</h3>
     <p>
-    <label for="change">Favorite search site: </label>
+    <label for="change">Favorite shopping site: </label>
       <select 
         name="destinationList" 
         id="change" 
         onChange="goToNewPage(this.form);"
         aria-live="polite"
-        aria-label="Select a favorite search site ">
+        aria-label="Select a favorite shopping site ">
           <option value="" disabled selected>Choose Destination:</option>
-          <option value="https://www.yahoo.com/">Yahoo</option>
-          <option value="https://www.google.com/">Google</option>
-          <option value="https://www.bing.com/">Bing</option>
+          <option value="https://www.amazon.com/">Amazon</option>
+          <option value="https://www.walmart.com/">Walmart</option>
+          <option value="https://www.target.com/">Target</option>
         </select>
       </p>
     </form>
@@ -33,17 +33,17 @@
     <br>
 
 <form>
-<h3>Choose your destination (using onClick event handler)</h3>
+<h3>Plan Your Next Vacation! (using onClick event handler)</h3>
 <p>
-<label for="click">Favorite site: </label>
+<label for="click">Favorite travel search site: </label>
   <select 
       name="destinationList" 
       id="click"
       aria-live="polite"
-      aria-label="Select a favorite search site ">
-        <option value="https://www.wikipedia.com/">Wikipedia</option>
-        <option value="https://www.w3.org/">W3C</option>
-        <option value="https://www.mozilla.org/">Mozilla</option>
+      aria-label="Select a favorite travel search site ">
+        <option value="https://www.kayak.com/">Kayak</option>
+        <option value="https://www.google.com/travel/flights/">Google Flights</option>
+        <option value="https://www.expedia.com/">Expedia</option>
     </select>
 <input type="button" value="Go" onClick="goToNewPage(this.form);">
 </p>
