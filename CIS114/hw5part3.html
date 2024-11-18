@@ -9,38 +9,54 @@
 
   <script> 
 
-function validate()
+function process()
   {	
-    const data = [["AL", "Alabama", "Montgomery", 4903285],
+    const data = [
+	    	["AL", "Alabama", "Montgomery", 4903285],
 	       	["AK", "Alaska", "Juneau", 731545],
 	       	["AZ", "Arizona", "Phoenix", 7278717],
 	       	["AR", "Arkansas", "Little Rock", 3017825],
 		["CA", "California", "Sacramento", 39512223],
-		["CO", "Colorado", "Denver", 5758736]];
-     var error = "Sorry, we do not have information about this state! We only have information about";
-     var info = "Info about selected state: placeholder";
+		["CO", "Colorado", "Denver", 5758736]
+		 ];
+     // error message with all available state names
+     let error = "Sorry, we do not have information about this state! We only have information about ";
+     for (const state of data) {
+	error+= `${state[1]}, `;
+	}
+     error = error.slice(0, -2) + "."; // Remove the last comma and space, add a period.
+
+     // message with chosen state info
      var selected = null;	
   	
-     var input = document.getElementById("state").value.toLowerCase();
+     var input = document.getElementById("state").value.trim().toLowerCase();
 
-	for (state in data) {
-  		if (state[0].toLowerCase() == input || state[1].toLowerCase() == input) {          	
+	for (const state of data) {
+  		if (state[0].toLowerCase() === input || state[1].toLowerCase() === input) {          	
 			selected = state;
-			document.getElementById("msg").innerHTML = "";
 			break;
 		    }          
   	}
 
-	  if (select == null) {
+	  if (selected == null) {
 	     document.getElementById("msg").innerHTML = error;
 	  } else {
+	    const info = `
+             Info about selected state:<br>
+             <strong>Abbreviation:</strong> ${selected[0]}<br>
+             <strong>Name:</strong> ${selected[1]}<br>
+             <strong>Capital:</strong> ${selected[2]}<br>
+             <strong>Population:</strong> ${selected[3].toLocaleString()}
+           `;
+    document.getElementById("msg").innerHTML = info;
 	    document.getElementById("msg").innerHTML = info;
 	  }
+  }
 
 
 function res()
 {
-document.getElementById("msg").innerHTML = " ";
+document.getElementById("msg").innerHTML = "";
 }
 </script>
 
@@ -59,16 +75,16 @@ document.getElementById("msg").innerHTML = " ";
 <table>
    <!-- Text for State input -->
   <tr>
-      <td><label for="name">State:</label></td>
+      <td><label for="state">State:</label></td>
       <td><input type="text" name="state" id="state"></td>
   </tr>  
    <!-- button to submit input & for output -->
 
   <tr>
- <td><input type="button"  onclick="validate();" value="Get State Info"></td>
+ <td><input type="button"  onclick="process();" value="Get State Info"></td>
  <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
 </tr>
-<tr>a
+<tr>
  <td colspan="2"><div id="msg" class="validation"></div></td>
 </tr>
 </table>
