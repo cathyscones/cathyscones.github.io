@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 5 Part 3: State Census Data</title>
+  <meta name="description" content = "Cathy Cohn homework 5 part 3">
+  <link rel="stylesheet" href="style_cis114.css">
+
+  <script> 
+
+function validate()
+  {	
+     var msg = "Enter a name";
+     var msg2 = "Select one age range";
+     var msg3 = "Select at least one browser";
+     var msg4 = "Select a movie genre";
+     var validMsg = "All form fields are valid";
+     var x=0;   // use x for determining if form fields valid 
+	
+     // check for any space characters that may be input
+  	
+     var name = document.getElementById("name").value;
+        
+  	if (name == "" || name == null)
+  	{          	
+            document.getElementById("msg").innerHTML = msg;
+            x=1;
+    }  
+    else {
+        document.getElementById("msg").innerHTML = "";
+    }        
+
+  }
+
+function res()
+{
+document.getElementById("msg").innerHTML = " ";
+document.getElementById("msg2").innerHTML = " ";
+document.getElementById("msg3").innerHTML = " ";
+document.getElementById("msg4").innerHTML = " ";
+document.getElementById("msg5").innerHTML = " ";
+
+}
+</script>
+
+  </head>
+
+  <body>
+
+    
+   <div>
+    <h2>State Census Data</h2>
+<br>
+    <form id="myform" name="myform">
+<table>
+   <!-- Text for State input -->
+  <tr>
+      <td><label for="name">State:</label></td>
+      <td><input type="text" name="state" id="state"></td>
+  </tr>  
+   <!-- button to submit input & for output -->
+
+  <tr>
+ <td><input type="button"  onclick="validate();" value="Submit"></td>
+ <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
+  <td></td>
+</tr>
+<tr>
+ <td colspan="3"><div id="msg5" class="validation"></div></td>
+</tr>
+</table>
+</form>
+
+            
+      <p> <a href="hw5.html">Back</a> </p>   
+    </div>
+         
+    </body>
+  </html>
+  
