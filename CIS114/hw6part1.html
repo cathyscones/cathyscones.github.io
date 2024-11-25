@@ -22,18 +22,30 @@
 
 <script>
   function submit(){
-      let number = document.getElementById("input").value.trim();
-      number = parseFloat(number);
-      let errorMsg = "You entered TO DO: FINISH THIS MSG";
+    let re = new RegExp("^[0-9]{1,11}\.[0-9]{4,}$");
+    let errorMsg = "Invalid input - type a number with at least 4 decimals.";
+    let number = parseFloat(document.getElementById("input").value.trim());
+
+    // validate formatting 4 decimal places
+    if ( (number == "" || (!(re.test(number))) )
+              {
+               document.getElementById("output").innerHTML = errorMsg;
+              }
+    else {
       let roundedMsg =  "You entered " + number + 
                      "\nRounded to the nearest integer: " + Math.round(number);
                      "\nSquare root, rounded to the nearest integer: " + Math.round(Math.sqrt(number));
                      "\nRounded to the nearest tenths place: " + number.toFixed(1);
                      "\nRounded to the nearest hundreths place: " + number.toFixed(2);
                      "\nRounded to the nearest thousandths place: " + number.toFixed(1);
-
       
-                   document.getElementById("output").value = roundedMsg;
+     document.getElementById("output").value = roundedMsg;
+    }
+  }
+   
+  function res() {    
+       document.getElementById("errOut").innerHTML="";
+       document.getElementById("number").focus();
   }
   
 </script>
