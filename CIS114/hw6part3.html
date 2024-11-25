@@ -24,12 +24,13 @@
       let resultMsg = "";
       let input = document.getElementById("phone").value.trim();
       // Note: regex accepts input with or without a space after area code
-      let re = = new RegExp(/^\((\d{3})\)\s?(\d{3})-(\d{4})$/);
+      let re = new RegExp(/^\((\d{3})\)\s?(\d{3})-(\d{4})$/);
       
       if (!re.test(input)) {
-        result = "Please enter phone number in format (999)999-9999.";    
+        resultMsg = "Please enter phone number in format (999)999-9999.";    
+      }
       else {
-        result = "Thank you for submitting your phone number." +
+        resultMsg = "Thank you for submitting your phone number." +
           "\nAn agent will contact you in the next 24-48 hours.";
         }
       document.getElementById("result").innerHTML = resultMsg;
