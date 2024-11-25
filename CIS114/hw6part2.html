@@ -42,8 +42,19 @@
           }
         }
         if (x==0) {
-          let newWindow = window.open("", "Character Not Found", "width=300,height=100");
-          newWindow.document.write("Search character " + character + " not found in the content you typed.");
+          let newWindow = window.open("", "popupWindow", "width=300,height=100");
+          newWindow.document.write(`
+              <html>
+              <head>
+                <title>Character Not Found</title>
+              </head>
+              <body>
+                <p>Search character "${character}" not found in the content you typed.</p>
+                <button onclick="window.close();">Close</button>
+              </body>
+              </html>
+            `);
+          newWindow.document.close(); // Ensure the document is properly rendered
           newWindow.focus();
           res();
         }
