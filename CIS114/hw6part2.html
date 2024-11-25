@@ -10,12 +10,12 @@
 
   <body>
     <h2>Analyzing user input</h2>
-    <form>
+  <form onsubmit="process(); return false;" class="search-form">
 <label for="longText">Enter a longer text:</label>
       <textarea rows="4" cols="40" id="longText"></textarea><br>
 <label for="character">Enter a character to search in text:</label>
   <input type="text" id="character" name="character" maxlength=1><br>
-  <input type="button" onclick="process()" value="Submit">
+  <input type="submit" value="Submit">
   <input type="reset" onclick="res()" value="Clear"><br><br>
 </form>
     
@@ -56,7 +56,6 @@
             `);
           newWindow.document.close(); // Ensure the document is properly rendered
           newWindow.focus();
-          res();
         }
         else {
           result = `Search character ${character} was found ${x} times in the passage.`;
