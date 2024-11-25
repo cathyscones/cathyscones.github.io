@@ -10,9 +10,45 @@
 
   <body>
     <h2>Regex Validation</h2>
-    <p>Coming soon!</p>
+    <form onsubmit="checkNumber(); return false;">
+       <label for="phoneNum">Enter a phone number:</label>
+      <input type="text" id="phone" name="phone"><br>
+      <input type="submit" value="Submit">
+      <input type="reset" onclick="res()" value="Clear"><br><br>
+    </form>
+    
+    <div id="result" class="validation"></div>
+ 
     <div>
        <p> <a href="hw6.html">Back</a> </p>   
+    </div>
+    </body>
+
+  <script>
+    function checkNumber() {
+      let resultMsg = "";
+      let input = document.getElementById("phone").value.trim();
+      // Note: regex accepts input with or without a space after area code
+      let re = = new RegExp(/^\((\d{3})\)\s?(\d{3})-(\d{4})$/);
+      
+      if (!re.test(input)) {
+        result = "Please enter phone number in format (999)999-9999.";    
+      else {
+        result = "Thank you for submitting your phone number." +
+          "\nAn agent will contact you in the next 24-48 hours.";
+        }
+      document.getElementById("result").innerHTML = resultMsg;
+    }
+
+    function res() {
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("phone").value = "";
+    }
+  </script>
+  
+  <div>
+       
+    <p> <a href="hw6.html">Back</a> </p>   
     </div>
     </body>
   </html>
