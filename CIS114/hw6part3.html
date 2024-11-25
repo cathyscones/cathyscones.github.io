@@ -24,11 +24,8 @@
       let resultMsg = "";
       let input = document.getElementById("phone").value.trim();
       // Note: regex accepts input with or without a space after area code
-      let re = new RegExp(/^\((\d{3})\)\s?(\d{3})-(\d{4})$/);
-       // Debugging the input and regex test result
-      console.log("Input:", input);
-      console.log("Regex test result:", re.test(input));
-
+      let re = /^\((\d{3})\)\s?(\d{3})-(\d{4})$/;
+     
       if (!re.test(input)) {
         resultMsg = "Please enter phone number in format (999)999-9999.";    
       }
