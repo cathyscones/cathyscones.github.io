@@ -19,12 +19,45 @@
   <input type="reset" onclick="res()" value="Clear"><br><br>
 </form>
     
-<label for="output">Output:</label> 
-<textarea rows="6" cols="60" id="output" readonly></textarea><br><br>
-
+<div id="result" class="validation"></div>
     <div>
        <p> <a href="hw6.html">Back</a> </p>   
     </div>
     </body>
+
+  <script>
+    function process() {
+      let result = "";
+      let input = document.getElementById("longText").value;
+      let character = document.getElementById("character").value;
+      let x=0;
+
+      if (character === "") {
+        document.getElementById("result").value.innerHTML = "You must enter a character";
+      } else {
+        
+        for (let char of longText) {
+          if (char === character) {
+            x++;
+          }
+        }
+        if (x==0) {
+          let newWindow = window.open("", "Character Not Found", "width=300,height=100");
+          newWindow.document.write("Search character " + character + " not found in the content you typed.");
+          newWindow.focus();
+          res();
+        }
+        else {
+          result = `Search character ${character} was found ${x} times in the passage.`;
+          document.getElementById("result").value.innerHTML = result;
+        }
+      }
+    }
+
+    function res() {
+      document.getElementById("result").value.innerHTML = "";
+      document.getElementById("longText").value = "";
+    }
+  </script>
   </html>
   
