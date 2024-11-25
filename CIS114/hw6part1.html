@@ -27,25 +27,24 @@
     let number = parseFloat(document.getElementById("input").value.trim());
 
     // validate formatting 4 decimal places
-    if ( (number == "" || (!(re.test(number))) )
+    if (number == "" || (!(re.test(number))) )
               {
                document.getElementById("output").innerHTML = errorMsg;
               }
     else {
       let roundedMsg =  "You entered " + number + 
-                     "\nRounded to the nearest integer: " + Math.round(number);
-                     "\nSquare root, rounded to the nearest integer: " + Math.round(Math.sqrt(number));
-                     "\nRounded to the nearest tenths place: " + number.toFixed(1);
-                     "\nRounded to the nearest hundreths place: " + number.toFixed(2);
-                     "\nRounded to the nearest thousandths place: " + number.toFixed(1);
+                     "\nRounded to the nearest integer: " + Math.round(number) +
+                     "\nSquare root, rounded to the nearest integer: " + Math.round(Math.sqrt(number)) +
+                     "\nRounded to the nearest tenths place: " + number.toFixed(1) +
+                     "\nRounded to the nearest hundreths place: " + number.toFixed(2) +
+                     "\nRounded to the nearest thousandths place: " + number.toFixed(3);
       
      document.getElementById("output").value = roundedMsg;
     }
   }
    
   function res() {    
-       document.getElementById("errOut").innerHTML="";
-       document.getElementById("number").focus();
+       document.getElementById("output").innerHTML="";
   }
   
 </script>
