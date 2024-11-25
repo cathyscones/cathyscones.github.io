@@ -10,7 +10,18 @@
 
   <body>
     <h2>Analyzing user input</h2>
-    <p>Coming soon!</p>
+    <form>
+<label for="longText">Enter a longer text:</label>
+      <textarea rows="4" cols="40" id="longText"></textarea><br>
+<label for="character">Enter a character to search in text:</label>
+  <input type="text" id="character" name="character" maxlength=1><br>
+  <input type="button" onclick="process()" value="Submit">
+  <input type="reset" onclick="res()" value="Clear"><br><br>
+</form>
+    
+<label for="output">Output:</label> 
+<textarea rows="6" cols="60" id="output" readonly></textarea><br><br>
+
     <div>
        <p> <a href="hw6.html">Back</a> </p>   
     </div>
