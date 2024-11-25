@@ -14,7 +14,7 @@
 <label for="input">Enter a number with 4 decimals:</label>
   <input type="text" id="input" name="input"><br>
   <input type="button" onclick="process()" value="Submit">
-  <input type="reset" value="Clear"><br><br>
+  <input type="reset" onclick="res()" value="Clear"><br><br>
 </form>
     
 <label for="output">Output:</label> 
@@ -22,7 +22,7 @@
 
 <script>
   function process(){
-    let re = new RegExp("^[0-9]{1,11}\.[0-9]{4,}$");
+    let re = new RegExp("^[0-9]{1,11}\\.\\d{4,}$");
     let errorMsg = "Invalid input - type a number with at least 4 decimals.";
     let input = document.getElementById("input").value.trim();
 
