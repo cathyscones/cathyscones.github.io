@@ -12,16 +12,28 @@
     <h2>Using the Math object</h2>
 <form>
 <label for="input">Enter a number with 4 decimals:</label>
-  <input type="number" id="input" name="input">
+  <input type="number" id="input" name="input"><br>
   <input type="button" onclick="submit()" value="Submit">
   <input type="reset" value="Clear"><br>  
 </form>
     
 <label for="output">Output:</label> 
-<textarea rows="2" cols="120" id="output" readonly></textarea><br><br>
+<textarea rows="5" cols="40" id="output" readonly></textarea><br><br>
 
     <script>
+      let number = document.getElementById("input").value.trim();
+      number = parseFloat(number);
+      let errorMsg = "You entered TO DO: FINISH THIS MSG";
+      let roundedMsg =  "You entered " + number + 
+                     "\nRounded to the nearest integer: " + Math.round(number);
+                     "\nSquare root, rounded to the nearest integer: " + Math.round(Math.sqrt(number));
+                     "\nRounded to the nearest tenths place: " + number.toFixed(1);
+                     "\nRounded to the nearest hundreths place: " + number.toFixed(2);
+                     "\nRounded to the nearest thousandths place: " + number.toFixed(1);
+
       
+                   document.getElementById("output").value = roundedMsg;
+                    
     </script>
     <div>
            <p> <a href="hw6.html">Back</a> </p>   
