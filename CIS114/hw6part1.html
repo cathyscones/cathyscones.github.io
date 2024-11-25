@@ -14,13 +14,14 @@
 <label for="input">Enter a number with 4 decimals:</label>
   <input type="number" id="input" name="input"><br>
   <input type="button" onclick="submit()" value="Submit">
-  <input type="reset" value="Clear"><br>  
+  <input type="reset" value="Clear"><br><br>
 </form>
     
 <label for="output">Output:</label> 
 <textarea rows="5" cols="40" id="output" readonly></textarea><br><br>
 
-    <script>
+<script>
+  function submit(){
       let number = document.getElementById("input").value.trim();
       number = parseFloat(number);
       let errorMsg = "You entered TO DO: FINISH THIS MSG";
@@ -33,8 +34,9 @@
 
       
                    document.getElementById("output").value = roundedMsg;
-                    
-    </script>
+  }
+  
+</script>
     <div>
            <p> <a href="hw6.html">Back</a> </p>   
     </div>
