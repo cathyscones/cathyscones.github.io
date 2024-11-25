@@ -24,14 +24,15 @@
   function submit(){
     let re = new RegExp("^[0-9]{1,11}\.[0-9]{4,}$");
     let errorMsg = "Invalid input - type a number with at least 4 decimals.";
-    let number = parseFloat(document.getElementById("input").value.trim());
+    let input = document.getElementById("input").value.trim();
 
     // validate formatting 4 decimal places
-    if (number == "" || (!(re.test(number))) )
+    if (!(re.test(number)))
               {
                document.getElementById("output").innerHTML = errorMsg;
               }
     else {
+      let number = parseFloat(input);
       let roundedMsg =  "You entered " + number + 
                      "\nRounded to the nearest integer: " + Math.round(number) +
                      "\nSquare root, rounded to the nearest integer: " + Math.round(Math.sqrt(number)) +
@@ -45,6 +46,8 @@
    
   function res() {    
        document.getElementById("output").innerHTML="";
+      document.getElementById("input").focus();
+
   }
   
 </script>
