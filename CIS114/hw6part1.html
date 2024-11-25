@@ -27,9 +27,9 @@
     let input = document.getElementById("input").value.trim();
 
     // validate formatting 4 decimal places
-    if (!(re.test(number)))
+    if (!(re.test(input)))
               {
-               document.getElementById("output").innerHTML = errorMsg;
+               document.getElementById("output").value = errorMsg;
               }
     else {
       let number = parseFloat(input);
