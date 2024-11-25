@@ -33,10 +33,10 @@
       let x=0;
 
       if (character === "") {
-        document.getElementById("result").value.innerHTML = "You must enter a character";
+        document.getElementById("result").innerHTML = "You must enter a character";
       } else {
         
-        for (let char of longText) {
+        for (let char of input) {
           if (char === character) {
             x++;
           }
@@ -49,14 +49,15 @@
         }
         else {
           result = `Search character ${character} was found ${x} times in the passage.`;
-          document.getElementById("result").value.innerHTML = result;
+          document.getElementById("result").innerHTML = result;
         }
       }
     }
 
     function res() {
-      document.getElementById("result").value.innerHTML = "";
+      document.getElementById("result").innerHTML = "";
       document.getElementById("longText").value = "";
+      document.getElementById("character").value = "";
     }
   </script>
   </html>
