@@ -28,8 +28,8 @@
   <script>
     function process() {
       let result = "";
-      let input = document.getElementById("longText").value;
-      let character = document.getElementById("character").value;
+      let input = document.getElementById("longText").value.toLowerCase();
+      let character = document.getElementById("character").value.toLowerCase();
       let x=0;
 
       if (character === "") {
