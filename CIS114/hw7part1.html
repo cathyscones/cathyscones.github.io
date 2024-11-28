@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cathy Cohn Homework 7 Part 1: Styling a Page</title>
+  <meta name="description" content = "Cathy Cohn homework 7 part 1">
+  <link rel="stylesheet" href="style_cis114.css">
+</head>
+
+  <body>
+
+    
+   <div>
+    <h2>Customize the style of this page!</h2></h2>
+<br>
+    <form id="myform" name="myform">
+<table>
+   <!-- Text for name-->
+  <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name"></td>
+      <td><div id="msg" class="validation"></div></td>
+    </tr>
+ <!-- Radio buttons for age-->
+  <tr>
+      <td>Age:</td>
+      <td>
+        <input type="radio" name="age" id="<20" value="<20">
+        <label for="<20"><20  </label>
+        <input type="radio" name="age" id="21-50" value="21-50">
+        <label for="21-50">21-50  </label>
+        <input type="radio" name="age" id=">50" value=">50">
+        <label for=">50">>50  </label>
+      </td>
+      <td><div id="msg2" class="validation"></div></td>
+
+    </tr>
+     <!-- Checkboxes for browsers-->
+    <tr>
+      <td>Which browsers have you used?</td>
+      <td>
+        <input type="checkbox" name="browsers" id="firefox" value="firefox">
+        <label for="firefox">Firefox</label>
+        <input type="checkbox" name="browsers" id="edge" value="edge">
+        <label for="edge">Edge</label>
+        <input type="checkbox" name="browsers" id="chrome" value="chrome">
+        <label for="chrome">Chrome</label>
+        <input type="checkbox" name="browsers" id="safari" value="safari">
+        <label for="safari">Safari</label>
+      </td>
+        <td><div id="msg3" class="validation"></div></td>
+    </tr>
+
+    <!-- Dropdown for movies -->
+    <tr>
+      <td><label for="movies">Favorite Movie Genre:</label></td>
+      <td>
+        <select name="movies" id="movies">
+          <option value="">Select</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="documentary">Documentary</option>
+          <option value="scifi">Science Fiction</option>
+        </select>
+      </td>
+        <td><div id="msg4" class="validation"></div></td>
+    </tr>
+  
+<tr>
+ <td><input type="button"  onclick="validate();" value="Submit"></td>
+ <td><input type="reset" value="Reset" onclick="window.location.reload();"></td>
+  <td></td>
+</tr>
+<tr>
+ <td colspan="3"><div id="msg5" class="validation"></div></td>
+</tr>
+</table>
+</form>
+
+            
+      <p> <a href="hw7.html">Back</a> </p>   
+    </div>
+
+    <script> 
+
+function validate()
+  {	
+     var msg = "Enter a name";
+     var msg2 = "Select one age range";
+     var msg3 = "Select at least one browser";
+     var msg4 = "Select a movie genre";
+     var validMsg = "All form fields are valid";
+     var x=0;   // use x for determining if form fields valid 
+	
+     // check for any space characters that may be input
+  	
+     var name = document.getElementById("name").value;
+        
+  	if (name == "" || name == null)
+  	{          	
+            document.getElementById("msg").innerHTML = msg;
+            x=1;
+    }  
+    else {
+        document.getElementById("msg").innerHTML = "";
+    }        
+
+    var radios = document.getElementsByName("age");
+    let isChecked = false;
+    for (const radio of radios) {
+        if (radio.checked) {
+            isChecked = true;
+            break;
+        }
+    }
+    if (!isChecked) {
+        document.getElementById("msg2").innerHTML = msg2;
+        x = 1;
+    } else {
+        document.getElementById("msg2").innerHTML = "";
+    }    
+
+    var checkboxes = document.getElementsByName("browsers");
+    let selected = false;
+    for (const checkbox of checkboxes) {
+        if (checkbox.checked) {
+            selected = true;
+            break;
+        }
+    }
+    if (!selected) {
+        document.getElementById("msg3").innerHTML = msg3;
+        x = 1;
+    } else {
+        document.getElementById("msg3").innerHTML = "";
+    }    
+
+  	var dropdown = document.getElementById("movies");
+    if (dropdown.value == "") {
+        document.getElementById("msg4").innerHTML = msg4;
+        x = 1;
+    } else {
+        document.getElementById("msg4").innerHTML = "";
+    }
+ 
+
+    if ( x == 0 ) {
+           document.getElementById("msg5").innerHTML = validMsg;
+          }
+  }
+
+function res()
+{
+document.getElementById("msg").innerHTML = " ";
+document.getElementById("msg2").innerHTML = " ";
+document.getElementById("msg3").innerHTML = " ";
+document.getElementById("msg4").innerHTML = " ";
+document.getElementById("msg5").innerHTML = " ";
+
+}
+</script>
+         
+    </body>
+  </html>
+  
