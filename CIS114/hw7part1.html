@@ -35,12 +35,13 @@
         <input type="checkbox" name="style" id="underlined" value="underlined" onclick="switchFontStyle(2)">
         <label for="underlined">Underlined</label><br>
 	    
-    <label for="size">Font size:</label>
+    <p><label for="size">Font size:</label>
 	<select name="fontSizeDropDown" id="fontSizeDropDown" onchange="selectFontSize()">
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>
-        </select><br>
+        </select>
+    </p><br>
   </form>
 </div>
             
@@ -103,6 +104,7 @@ function selectFontSize()
     {
 	mainArea.style.fontSize = "1.5rem";
     }   
+}
 </script>
          
     </body>
