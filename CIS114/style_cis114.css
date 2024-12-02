@@ -5,7 +5,7 @@
 		are reset and can now be set to whatever properties that would suit your website best. */
 	
 	body{
-		background:"mintcream";	/* a light green background color. */
+		background: mintcream;	/* a light green background color. */
 		font-family:Arial, Helvetica, sans-serif; /* the font family for all text on the web page is now either arial, helvetica or a sans-serif font if those two are not available */
 	}
 		
