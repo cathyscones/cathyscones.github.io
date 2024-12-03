@@ -13,11 +13,11 @@
     
    <div>
     <h2>Using cookies</h2>
-  <p>
+  <p id="formInner">
     <form id="myform" name="myform">
       <label for="name">Full Name:</label> <input type="text" name="fullname" id="name" autofocus><br>
       <label for="username">Username:</label><input type="text" name="username" id="username"><br>
-      <input type="button" value="Submit" onclick="checkCookie();">
+      <input type="button" value="Submit" onclick="register(this.form.name.value); register(this.form.username.value); history.go(0)">
 
   </form>
    </p>
@@ -27,7 +27,7 @@
 
     <script> 
 
-function setCookie(name)
+function register(name)
 {
 final_cookie = "mycookie=" + encodeURIComponent(name);
 document.cookie = final_cookie;
@@ -47,6 +47,11 @@ end_position = document.cookie.length
 return (decodeURIComponent(document.cookie.substring(start_position, end_position)))
 }
 }
+}  
+    let name = getCookie("mycookie")
+if (name)
+{
+document.write("Welcome Back, ", username)
 }
     </script>
          
