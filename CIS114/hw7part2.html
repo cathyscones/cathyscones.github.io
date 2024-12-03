@@ -13,14 +13,14 @@
     
    <div>
     <h2>Using cookies</h2>
-  <p id="formInner">
+  <div id="formInner">
     <form id="myform" name="myform">
       <label for="name">Full Name:</label> <input type="text" name="fullname" id="name" autofocus><br>
       <label for="username">Username:</label><input type="text" name="username" id="username"><br>
       <input type="button" value="Submit" onclick="submitForm()">
-
   </form>
-   </p>
+      <p id="warning" style="color: red; font-style: italic; display: none;"></p>
+   </div>
             
       <p> <a href="hw7.html">Back</a> </p>   
     </div>
@@ -53,7 +53,7 @@ function submitForm() {
         // Reload the page to display the greeting
         location.reload();
       } else {
-        document.write("Please fill in both fields!");
+        document.getElementById('warning').innerHTML = "Please fill in both fields!";
       }
     }
       
