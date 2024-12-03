@@ -47,8 +47,8 @@ function submitForm() {
       const userName = document.getElementById('username').value;
 
       if (fullName && userName) {
-        registerCookie('fullname', fullName);
-        registerCookie('username', userName);
+        register('fullname', fullName);
+        register('username', userName);
 
         // Reload the page to display the greeting
         location.reload();
