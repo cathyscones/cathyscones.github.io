@@ -49,9 +49,21 @@ function myFunction(xml) {
 </script>
 
   <h2>Explanation of Ajax</h2>
-  <p> create one or two paragraphs to explain what is happening with the JavaScript, AJAX code you see in the .html file - make sure you explain all the AJAX calls - you do not need to explain the XML structure</p>
-<h2>REST API</h2>
-  <p>Report on a specific chosen API!</p>
+  <p>When the user clicks the button in the html page, the on click event handler calls the loadDoc() JavaScript function. 
+    This loadDoc() function, in turn, uses AJAX to fetch the xml CD catalog file without reloading the page. It then calls the subsequent Javascript function, myFunction(xml).</p>
+  <p>This next function is where the CD catalog xml file is processed. It loops through each <CD> element of the xml file and presents the given data in a table which then is inserted directly into the html webpage.</p>
+
+  <h2>REST API</h2>
+  // Scenario assumes the company has a map-based UI that predicts extreme weather events and other natural disasters
+  <p>After the tsunami warning last week, our leadership committee has determined we need our application to include optional access to historical earthquake event data. 
+  To that end, our committee recommends adoption of the <a href="https://earthquake.usgs.gov/fdsnws/event/1/"> USGS Earthquake Catalog API</a>. 
+  The key benefits of this API are that it:</p> 
+  <ul>
+    <li>Uses highly accurate data</li>
+    <li>Is free and easily accessible, no API key needed</li>
+  <li>Produces output in a range of formats, including <a href="https://en.wikipedia.org/wiki/QuakeML"> QuakeML</a>, CSV, KML, and GeoJSON</li>
+  </ul>
+  <p>While there are other data sets of Earthquake data that we could use in our geographic application, this recommended API provides by far the most thorough, accurate, and easily accessible open source data at no cost to our company.</p>
 
   <div>
     <a href="/CIS114/hw1.html">Return to main page</a>
