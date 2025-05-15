@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --rhombus-blue: #0026FF;
+  --rhombus-yellow: #FEC900;
+  --gray-dark: #1c1f26;
+  --gray-medium: #3a3f4b;
+  --gray-light: #a2a8b3;
+  --navy-blue: #000640;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  background-color: var(--navy-blue);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rhombus-button {
+  background-color: var(--rhombus-blue);
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.5em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 3;
+}
+
+.rhombus-button:hover {
+  transform: scale(1.05);
+}
+
+.case-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+
+.case-button {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background-color: var(--rhombus-blue);
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease;
+}
+
+#case1-button { top: 10%; left: 10%; }
+#case2-button { top: 10%; right: 10%; }
+#case3-button { bottom: 10%; left: 10%; }
+#case4-button { bottom: 10%; right: 10%; }
+
+.case-buttons.visible .case-button {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hidden {
+  display: none;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .case-content {
+    padding: 40px;
+    color: white;
+    max-width: 80%;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  
+  .case-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .next-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    border: none;
+    background-color: var(--rhombus-blue);
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
